@@ -1,0 +1,66 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: fvi_db
+      POSTGRES_USER: fvi_user
+      POSTGRES_PASSWORD: fvi_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+      - redis
+    environment:
+      - DATABASE_URL=postgresql://fvi_user:fvi_password@postgres:5432/fvi_db
+      - REDIS_URL=redis://redis:6379
+    volumes:
+      - ./:/app
+      - ./data:/app/data
+
+  airflow-webserver:
+    build: ./airflow
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+      - redis
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql://fvi_user:fvi_password@postgres:5432/fvi_db
+      - AIRFLOW__CORE__LOAD_EXAMPLES=false
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/logs:/opt/airflow/logs
+      - ./airflow/plugins:/opt/airflow/plugins
+      - ./data:/opt/airflow/data
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+
+volumes:
+  postgres_data:
+  redis_data:

@@ -1,0 +1,457 @@
+name: FVI Analytics CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+env:
+  PYTHON_VERSION: 3.12
+  NODE_VERSION: 18
+
+jobs:
+  # Unit Tests
+  unit-tests:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: pgvector/pgvector:pg15
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: fvi_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+      
+      redis:
+        image: redis:7-alpine
+        ports:
+          - 6379:6379
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+        cache: 'pip'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements-phase2.txt
+        pip install pytest pytest-asyncio pytest-cov
+    
+    - name: Run unit tests
+      env:
+        DB_HOST: localhost
+        DB_PORT: 5432
+        DB_NAME: fvi_test
+        DB_USER: postgres
+        DB_PASSWORD: postgres
+        REDIS_HOST: localhost
+        REDIS_PORT: 6379
+      run: |
+        pytest tests/unit/ -v --cov=src --cov-report=xml --cov-report=html
+    
+    - name: Upload coverage reports
+      uses: codecov/codecov-action@v3
+      with:
+        file: ./coverage.xml
+        flags: unittests
+        name: codecov-umbrella
+
+  # Integration Tests
+  integration-tests:
+    runs-on: ubuntu-latest
+    needs: unit-tests
+    services:
+      postgres:
+        image: pgvector/pgvector:pg15
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: fvi_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+      
+      redis:
+        image: redis:7-alpine
+        ports:
+          - 6379:6379
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+        cache: 'pip'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements-phase2.txt
+        pip install pytest pytest-asyncio
+    
+    - name: Run integration tests
+      env:
+        DB_HOST: localhost
+        DB_PORT: 5432
+        DB_NAME: fvi_test
+        DB_USER: postgres
+        DB_PASSWORD: postgres
+        REDIS_HOST: localhost
+        REDIS_PORT: 6379
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      run: |
+        pytest tests/integration/ -v
+
+  # Code Quality
+  code-quality:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+        cache: 'pip'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install black flake8 mypy isort
+        pip install -r requirements-phase2.txt
+    
+    - name: Run Black
+      run: black --check src/ tests/
+    
+    - name: Run Flake8
+      run: flake8 src/ tests/
+    
+    - name: Run isort
+      run: isort --check-only src/ tests/
+    
+    - name: Run MyPy
+      run: mypy src/
+
+  # Security Scan
+  security-scan:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Run Trivy vulnerability scanner
+      uses: aquasecurity/trivy-action@master
+      with:
+        scan-type: 'fs'
+        scan-ref: '.'
+        format: 'sarif'
+        output: 'trivy-results.sarif'
+    
+    - name: Upload Trivy scan results
+      uses: github/codeql-action/upload-sarif@v2
+      with:
+        sarif_file: 'trivy-results.sarif'
+
+  # dbt Tests
+  dbt-tests:
+    runs-on: ubuntu-latest
+    needs: unit-tests
+    services:
+      postgres:
+        image: pgvector/pgvector:pg15
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: fvi_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+        cache: 'pip'
+    
+    - name: Install dbt
+      run: |
+        python -m pip install --upgrade pip
+        pip install dbt-core dbt-postgres dbt-utils
+    
+    - name: Setup dbt profiles
+      run: |
+        mkdir -p ~/.dbt
+        cat > ~/.dbt/profiles.yml << EOF
+        fvi_analytics:
+          target: test
+          outputs:
+            test:
+              type: postgres
+              host: localhost
+              user: postgres
+              password: postgres
+              port: 5432
+              dbname: fvi_test
+              schema: public
+              threads: 4
+        EOF
+    
+    - name: Install dbt dependencies
+      run: |
+        cd dbt
+        dbt deps
+    
+    - name: Run dbt models
+      run: |
+        cd dbt
+        dbt run --target test
+    
+    - name: Run dbt tests
+      run: |
+        cd dbt
+        dbt test --target test
+
+  # Build and Push Docker Images
+  build-images:
+    runs-on: ubuntu-latest
+    needs: [unit-tests, integration-tests, code-quality, dbt-tests]
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+    
+    - name: Login to Docker Hub
+      uses: docker/login-action@v3
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+    
+    - name: Extract metadata
+      id: meta
+      uses: docker/metadata-action@v5
+      with:
+        images: fvianalytics/platform
+        tags: |
+          type=ref,event=branch
+          type=ref,event=pr
+          type=sha,prefix={{branch}}-
+          type=raw,value=latest,enable={{is_default_branch}}
+    
+    - name: Build and push inference service
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        file: ./Dockerfile.phase2
+        target: production
+        push: true
+        tags: fvianalytics/inference-service:${{ github.sha }}
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
+    
+    - name: Build and push vector-rag service
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        file: ./Dockerfile.phase2
+        target: vector-rag
+        push: true
+        tags: fvianalytics/vector-rag:${{ github.sha }}
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
+    
+    - name: Build and push training service
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        file: ./Dockerfile.phase2
+        target: training
+        push: true
+        tags: fvianalytics/training:${{ github.sha }}
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
+
+  # Deploy to Staging
+  deploy-staging:
+    runs-on: ubuntu-latest
+    needs: build-images
+    if: github.ref == 'refs/heads/main'
+    environment: staging
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Deploy to staging
+      run: |
+        echo "Deploying to staging environment"
+        # In a real deployment, this would use kubectl, terraform, or other deployment tools
+        # kubectl set image deployment/inference-service inference-service=fvianalytics/inference-service:${{ github.sha }}
+        # kubectl set image deployment/vector-rag-service vector-rag-service=fvianalytics/vector-rag:${{ github.sha }}
+
+  # End-to-End Tests
+  e2e-tests:
+    runs-on: ubuntu-latest
+    needs: deploy-staging
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+        cache: 'pip'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pytest pytest-asyncio requests
+    
+    - name: Run E2E tests
+      env:
+        STAGING_URL: ${{ secrets.STAGING_URL }}
+      run: |
+        pytest tests/e2e/ -v --staging-url=$STAGING_URL
+
+  # Coverage Gate
+  coverage-gate:
+    runs-on: ubuntu-latest
+    needs: [unit-tests, integration-tests]
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Download coverage artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: coverage-reports
+    
+    - name: Check coverage threshold
+      run: |
+        # Extract coverage percentage from coverage report
+        COVERAGE=$(python -c "
+        import xml.etree.ElementTree as ET
+        tree = ET.parse('coverage.xml')
+        root = tree.getroot()
+        coverage = float(root.attrib['line-rate']) * 100
+        print(f'{coverage:.1f}')
+        ")
+        
+        echo "Current coverage: $COVERAGE%"
+        
+        if (( $(echo "$COVERAGE < 90.0" | bc -l) )); then
+          echo "Coverage $COVERAGE% is below threshold of 90%"
+          exit 1
+        else
+          echo "Coverage $COVERAGE% meets threshold"
+        fi
+
+  # Deploy to Production
+  deploy-production:
+    runs-on: ubuntu-latest
+    needs: [deploy-staging, e2e-tests, coverage-gate]
+    if: github.ref == 'refs/heads/main'
+    environment: production
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Deploy to production
+      run: |
+        echo "Deploying to production environment"
+        # Blue-green deployment logic would go here
+        # This might involve:
+        # 1. Deploy to green environment
+        # 2. Run smoke tests
+        # 3. Switch traffic from blue to green
+        # 4. Monitor for issues
+        # 5. Rollback if needed
+
+  # Performance Tests
+  performance-tests:
+    runs-on: ubuntu-latest
+    needs: deploy-staging
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Install k6
+      run: |
+        sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C5AD17C747E3415A3642D57D77C6C491D6AC1D69
+        echo "deb https://dl.k6.io/deb stable main" | sudo tee /etc/apt/sources.list.d/k6.list
+        sudo apt-get update
+        sudo apt-get install k6
+    
+    - name: Run performance tests
+      env:
+        STAGING_URL: ${{ secrets.STAGING_URL }}
+      run: |
+        k6 run tests/performance/load_test.js
+
+  # Notify on Failure
+  notify-failure:
+    runs-on: ubuntu-latest
+    needs: [unit-tests, integration-tests, code-quality, security-scan, dbt-tests, coverage-gate]
+    if: failure()
+    
+    steps:
+    - name: Notify Slack on failure
+      uses: 8398a7/action-slack@v3
+      with:
+        status: failure
+        channel: '#fvi-alerts'
+        webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
+        fields: repo,message,commit,author,action,eventName,ref,workflow
+
+  # Notify on Success
+  notify-success:
+    runs-on: ubuntu-latest
+    needs: [deploy-production]
+    if: success()
+    
+    steps:
+    - name: Notify Slack on success
+      uses: 8398a7/action-slack@v3
+      with:
+        status: success
+        channel: '#fvi-alerts'
+        webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
+        fields: repo,message,commit,author,action,eventName,ref,workflow

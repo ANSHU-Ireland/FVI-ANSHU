@@ -1,0 +1,79 @@
+name: 'fvi_analytics'
+version: '1.0.0'
+config-version: 2
+
+# This setting configures which "profile" dbt uses for this project.
+profile: 'fvi_analytics'
+
+# These configurations specify where dbt should look for different types of files.
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "dbt_packages"
+  - "logs"
+  - "target"
+
+# Model configuration
+models:
+  fvi_analytics:
+    # Bronze layer - raw data with minimal transformation
+    bronze:
+      +materialized: table
+      +schema: bronze
+      +on_schema_change: "sync_all_columns"
+      +full_refresh: false
+      
+    # Silver layer - cleaned, typed, and enriched data
+    silver:
+      +materialized: table
+      +schema: silver
+      +on_schema_change: "sync_all_columns"
+      +full_refresh: false
+      
+    # Gold layer - feature store ready aggregations
+    gold:
+      +materialized: table
+      +schema: gold
+      +on_schema_change: "sync_all_columns"
+      +full_refresh: false
+      
+    # Mart layer - business-ready datasets
+    mart:
+      +materialized: table
+      +schema: mart
+      +on_schema_change: "sync_all_columns"
+      +full_refresh: false
+
+# Snapshot configuration
+snapshots:
+  fvi_analytics:
+    +strategy: timestamp
+    +unique_key: id
+    +updated_at: updated_at
+
+# Test configuration
+tests:
+  fvi_analytics:
+    +severity: error
+    +store_failures: true
+    +schema: test_failures
+
+# Vars for environment-specific settings
+vars:
+  # Data quality thresholds
+  completeness_threshold: 0.95
+  freshness_threshold_hours: 24
+  uniqueness_threshold: 0.99
+  
+  # Time boundaries
+  start_date: '2020-01-01'
+  lookback_days: 30
+  
+  # Feature store settings
+  feature_store_enabled: true
+  feature_store_schema: 'feature_store'

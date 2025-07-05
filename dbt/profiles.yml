@@ -1,0 +1,28 @@
+fvi_analytics:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      user: postgres
+      password: postgres
+      port: 5432
+      dbname: fvi_analytics
+      schema: public
+      threads: 4
+      keepalives_idle: 0
+      search_path: "public"
+      sslmode: prefer
+      
+    prod:
+      type: postgres
+      host: "{{ env_var('DB_HOST') }}"
+      user: "{{ env_var('DB_USER') }}"
+      password: "{{ env_var('DB_PASSWORD') }}"
+      port: "{{ env_var('DB_PORT') | int }}"
+      dbname: "{{ env_var('DB_NAME') }}"
+      schema: public
+      threads: 8
+      keepalives_idle: 0
+      search_path: "public"
+      sslmode: require

@@ -1,0 +1,262 @@
+version: '3.8'
+
+services:
+  # PostgreSQL with pgvector
+  postgres:
+    image: pgvector/pgvector:pg15
+    environment:
+      POSTGRES_DB: fvi_analytics
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/init:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  # Redis for caching and feature store
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  # MLflow Tracking Server
+  mlflow:
+    build:
+      context: .
+      dockerfile: Dockerfile.phase2
+      target: training
+    ports:
+      - "5000:5000"
+    environment:
+      MLFLOW_BACKEND_STORE_URI: postgresql://postgres:postgres@postgres:5432/fvi_analytics
+      MLFLOW_DEFAULT_ARTIFACT_ROOT: ./mlruns
+    depends_on:
+      - postgres
+    command: mlflow server --host 0.0.0.0 --port 5000 --backend-store-uri postgresql://postgres:postgres@postgres:5432/fvi_analytics
+    volumes:
+      - mlflow_data:/app/mlruns
+
+  # Main Inference Service
+  inference-service:
+    build:
+      context: .
+      dockerfile: Dockerfile.phase2
+      target: production
+    ports:
+      - "8000:8000"
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: fvi_analytics
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      MLFLOW_TRACKING_URI: http://mlflow:5000
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      mlflow:
+        condition: service_started
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      replicas: 2
+
+  # Vector-RAG Service
+  vector-rag-service:
+    build:
+      context: .
+      dockerfile: Dockerfile.phase2
+      target: vector-rag
+    ports:
+      - "8001:8001"
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: fvi_analytics
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # dbt Runner
+  dbt-runner:
+    build:
+      context: .
+      dockerfile: Dockerfile.phase2
+      target: dbt
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: fvi_analytics
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+    depends_on:
+      postgres:
+        condition: service_healthy
+    command: dbt run --profiles-dir /app/dbt
+    volumes:
+      - ./dbt:/app/dbt
+
+  # Celery Worker for Background Tasks
+  celery-worker:
+    build:
+      context: .
+      dockerfile: Dockerfile.phase2
+      target: scheduler
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: fvi_analytics
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      CELERY_BROKER_URL: redis://redis:6379/0
+      CELERY_RESULT_BACKEND: redis://redis:6379/0
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    command: celery -A src.scheduler.celery_app worker --loglevel=info
+
+  # Celery Beat for Scheduling
+  celery-beat:
+    build:
+      context: .
+      dockerfile: Dockerfile.phase2
+      target: scheduler
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: fvi_analytics
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      CELERY_BROKER_URL: redis://redis:6379/0
+      CELERY_RESULT_BACKEND: redis://redis:6379/0
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    command: celery -A src.scheduler.celery_app beat --loglevel=info
+
+  # Nginx Load Balancer
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/ssl:/etc/nginx/ssl
+    depends_on:
+      - inference-service
+      - vector-rag-service
+    restart: unless-stopped
+
+  # Prometheus for Metrics
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--storage.tsdb.retention.time=200h'
+      - '--web.enable-lifecycle'
+
+  # Grafana for Visualization
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3001:3000"
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: admin
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./monitoring/grafana/provisioning:/etc/grafana/provisioning
+    depends_on:
+      - prometheus
+
+  # Frontend Service
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - API_BASE_URL=http://inference-service:8000
+      - VECTOR_RAG_URL=http://vector-rag-service:8001
+      - JAEGER_ENDPOINT=http://jaeger:14268/api/traces
+      - PROMETHEUS_ENDPOINT=http://prometheus:9090
+    depends_on:
+      - inference-service
+      - vector-rag-service
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Jaeger for Distributed Tracing
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+    ports:
+      - "16686:16686"
+      - "14268:14268"
+    environment:
+      COLLECTOR_OTLP_ENABLED: true
+
+volumes:
+  postgres_data:
+  redis_data:
+  mlflow_data:
+  prometheus_data:
+  grafana_data:
+
+networks:
+  fvi_network:
+    driver: bridge

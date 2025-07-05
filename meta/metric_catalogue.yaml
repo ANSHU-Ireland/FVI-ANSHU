@@ -1,0 +1,2333 @@
+metadata:
+  name: FVI Coal Metrics Catalog
+  version: 1.0.0
+  description: Future Viability Index metrics for Coal industry
+  created_from: FVI Scoring Metrics_Coal.xlsx
+  naming_convention: FVI Standard v1.0
+data_sources:
+- name: Climate Trace
+  source_link: https://climatetrace.org/data
+  description: 'Climate TRACE Unveils Open Emissions Database of More Than 352 Million
+    Assets, inventory of unprecedented granularity that pinpoints nearly every major
+    source of greenhouse gas (GHG) emissions around the world and provides independently
+    produced estimates of how much each emits. Encompassing human-caused emissions
+    from facilities — including power plants, steel mills, ships, and oil refineries
+    — and other emitting activities — including fertilizer application, deforestation,
+    and wildfires.
+
+    https://climatetrace.org/news/climate-trace-unveils-open-emissions-database-of-more-than'
+  metadata:
+    data_type: Data
+    data_format: Structured Data
+    region: Global,National
+    category: Global,ALL,Industry,National
+    api_available: false
+- name: Coal Phase Out
+  source_link: https://ourworldindata.org/grapher/coal-phase-out-timeline
+  description: Coal Phase out
+  metadata:
+    api_available: false
+- name: Coal Divest
+  source_link: https://ieefa.org/resources/200-and-counting-global-financial-institutions-are-exiting-coal
+  description: 'Financial Institutions Divesting from Coal
+
+    '
+  metadata:
+    api_available: false
+- name: Coal Exit List
+  source_link: https://www.coalexit.org/data
+  description: null
+  metadata:
+    api_available: false
+- name: Coal Data sets
+  source_link: https://www.iea.org/data-and-statistics/data-sets#data-sets
+  description: Coal Data
+  metadata:
+    api_available: false
+- name: CARMA Database COAL
+  source_link: https://opennetzero.org/994c6283-e6b1-4498-b231-5b47bdfee6be/carbon-monitoring-for-action-carma-database
+  description: Carbon Monitoring for Action (CARMA) was a global database that gathered
+    and presented the best available estimates of CO2 emissions for 50,000 power plants
+    around the world and the identities of the 4,000 firms that own them. Electricity
+    production is responsible for about one-quarter of all climate-warming greenhouse
+    gas pollution, and CARMA was the only global database for tracking specific sources
+    of CO2, the most important greenhouse gas. First launched in 2007, CARMA was expanded
+    and upgraded in 2012 to incorporate data from authorities in the United States,
+    European Union, Canada, India, and South Africa as well as the International Atomic
+    Energy Agency. For facilities lacking publicly-disclosed data, estimates were
+    generated using a new suite of statistical models. The objective of CARMA was
+    to provide information necessary to create a cleaner, low-carbon future. By providing
+    complete information for both clean and dirty power producers, CARMA hopes to
+    influence the opinions and decisions of consumers, investors, shareholders, managers,
+    workers, activists, and policymakers. CARMA builds on experience with public information
+    disclosure techniques that have proven successful in reducing traditional pollutants.
+    CARMA is no longer active and the last update was November 28, 2012.
+  metadata:
+    api_available: false
+- name: COAL Databse
+  source_link: https://beyondfossilfuels.org/coal/
+  description: 'Additional information:  https://beyondfossilfuels.org/europes-coal-exit/'
+  metadata:
+    api_available: false
+- name: 'Global Monitor
+
+    '
+  source_link: https://globalenergymonitor.org/projects/global-coal-plant-tracker/tracker/
+  description: Global Coal Plant Monitor
+  metadata:
+    api_available: false
+- name: 'Coal Decarb pathways
+
+    '
+  source_link: https://www.sciencedirect.com/science/article/abs/pii/S0973082622002022
+  description: Modeling Coal decarbonising pathways
+  metadata:
+    api_available: false
+- name: Coal
+  source_link: https://www.smithschool.ox.ac.uk/sites/default/files/2022-04/satc.pdf
+  description: Stranded Assets
+  metadata:
+    api_available: false
+- name: 'Coal
+
+    '
+  source_link: http://databank.worldbank.org/metadataglossary/world-development-indicators/series/NY.GDP.COAL.RT.ZS
+  description: Coal Rents percentage of GDP
+  metadata:
+    api_available: false
+- name: Carbon Majors
+  source_link: https://carbonmajors.org/Downloads
+  description: 'Carbon Majors is a database of historical production data from 180
+    of the world’s largest oil, gas, coal, and cement producers. This data is used
+    to quantify the direct operational emissions and emissions from the combustion
+    of marketed products that can be attributed to these entities. These entities
+    include:
+
+
+    104 Investor-owned Companies, 70 State-owned Companies, 6 Nation States,
+
+    87 Oil Producing Entities, 86 Gas Entities, 103 Coal Entities, 8 Cement Entities
+
+
+    The data spans back to 1854 and contains over 1.39 trillion tonnes of CO2e covering
+    69% of global fossil fuel and cement emissions since the start of the Industrial
+    Revolution in 1751.'
+  metadata:
+    api_available: false
+- name: Power Plant Database
+  source_link: https://resourcewatch.org/data/explore/Powerwatch?section=All+data&selectedCollection=&zoom=3&lat=0&lng=0&pitch=0&bearing=0&basemap=dark&labels=light&aoi=&page=1&sort=most-viewed&sortDirection=-1&topics=%255B%2522energy%2522%255D
+  description: world resources institute
+  metadata:
+    api_available: false
+- name: Coal subsidy data
+  source_link: https://fossilfuelsubsidytracker.org/country/
+  description: null
+  metadata:
+    api_available: false
+- name: Fossil Fuel Subsidy Tracker
+  source_link: https://fossilfuelsubsidytracker.org/country/
+  description: "The Fossil Fuel Subsidy Tracker incorporates estimates of fossil-fuel\
+    \ subsidies and other support measures for 192 economies and is updated once a\
+    \ year as latest data from source organisations become available. The estimates\
+    \ are gathered from three international databases: the OECD Inventory of Support\
+    \ Measures for Fossil Fuels, the IEA Energy subsidies database and the IMF Fossil\
+    \ Fuel Subsidies database. Estimates from the three organisations are based on\
+    \ two different approaches, which provide complementary information. \nhttps://fossilfuelsubsidytracker.org/methodology/"
+  metadata:
+    api_available: false
+- name: 'Fossil Fuel Subsidies
+
+    Our World In data'
+  source_link: https://ourworldindata.org/grapher/fossil-fuel-subsidies?tab=table
+  description: 'Fossil-fuel subsidies, 2015 to 2021
+
+    Fossil-fuel pre-tax subsidies measured in millions of nominal US dollars.
+
+
+    '
+  metadata:
+    api_available: false
+- name: 'Fossil Fuel Subsidies
+
+    Our World In data'
+  source_link: https://www.imf.org/en/Topics/climate-change/energy-subsidies
+  description: null
+  metadata:
+    api_available: false
+- name: Carbon Majors databaase
+  source_link: https://climateaccountability.org/carbon-majors/
+  description: null
+  metadata:
+    api_available: false
+- name: Natural Resource Rents
+  source_link: https://ourworldindata.org/grapher/natural-resource-rents
+  description: Natural resources rents are estimated as the difference between the
+    price of a commodity and the average cost of producing it. Total natural resources
+    rents are the sum of oil rents, natural gas rents, coal rents, mineral rents,
+    and forest rents.
+  metadata:
+    data_type: Data
+    data_format: Structured Data
+    api_available: false
+- name: 'IMF Fossil Fuel Subsidies 2022 Global
+
+    '
+  source_link: https://www.imf.org/en/Publications/WP/Issues/2023/08/22/IMF-Fossil-Fuel-Subsidies-Data-2023-Update-537281
+  description: null
+  metadata:
+    api_available: false
+- name: Global Material Flows
+  source_link: https://www.resourcepanel.org/global-material-flows-database
+  description: null
+  metadata:
+    api_available: false
+- name: OTHER DATA REFERENCES - NOT COAL SPECIFIC
+  source_link: null
+  description: null
+  metadata:
+    api_available: false
+- name: One Earth Climate Model OECD
+  source_link: https://www.uts.edu.au/oecm/about-one-earth-climate-model f
+  description: OECD (One Earth Climate Model) Brief History and data archive links
+  metadata:
+    data_type: Information,Data
+    data_format: Structured Data,Unstructured
+    region: Global
+    category: Global
+    sub_category: OCED (One Earth Climate Model)
+    api_available: false
+    source_author: 'About the project
+
+      Funding - One Earth Climate Model
+
+      Leonardo Di Caprio Foundation
+
+      Research
+
+      University of Technology (UTS) / Institute for Sustainable Futures (ISF)
+
+      University of Melbourne
+
+      German Aerospace Center'
+- name: GICS (Global Industry Classification Standard) Overview & Use Cases
+  source_link: https://www.msci.com/our-solutions/indexes/gics
+  description: GICS Overview & Use Cases for informational purposes
+  metadata:
+    data_type: Information
+    data_format: Unstructured
+    region: Global
+    category: Global,Industry
+    sub_category: GICS (Global Industry Classification Standard)
+    api_available: false
+- name: GICS Schema (Data Fields)
+  source_link: https://www.kaggle.com/datasets/bockjo/gics-global-industry-classification-2023/data
+  description: The Global Industry Classification Standard (GICS) is an industry taxonomy
+    developed in 1999 by MSCI and Standard & Poor's (S&P) for use by the global financial
+    community. The GICS structure consists of 11 sectors, 25, industry groups, 73
+    industries 163 sub-industries into which S&P has categorized all major public
+    companies.  The system is similar to ICB (Industry Classification Benchmark),
+    a classification structure maintained by FTSE Group.  GICS is used as a basis
+    for S&P and MSCI financial market indexes in which each company is assigned to
+    a sub-industry, and to an industry, industry group, and sector, by its principal
+    business activity.
+  metadata:
+    data_type: Data
+    data_format: Structured Data
+    region: Global
+    category: Global,Industry
+    sub_category: GICS (Global Industry Classification Standard)
+    lifespan: This data represents the standard effective from March 17, 2023.
+    api_available: false
+    file_format: Excel
+    file_path: GICS_structure_and_definitions_effective_close_of_March_17_2023 3.xlsx
+      (https://v5.airtableusercontent.com/v3/u/41/41/1748368800000/eVJOy7z5mNEdGwrka8T3Bg/Ze2vf0OPnF172dcPSWoc_DP3H0r_F0aLn2xjopshPQ69fN1eqfjaScIVEm-oKo2LfYYy3N1B-BCe1DanVu6lmv5yqFRFhnqejSWfC1EMnb5_iYVPWE5wsxcsTlclYya123fKRiZQyImwZkyEfLNCXO2ti83vXktNfX4jUBetRfgm8GsbLMvljKU552G4JeFX56Sg4KcKvX1l3_cql-49xbFzJvtRaslsRTzWcIaWBC8/-p94kr6Pdiun3WcCpeRyDG0lPZLy24LCqV1oj6YKEEg)
+    source_author: '"GICS" is a registered trademark of McGraw Hill Financial and
+      MSCI Inc.'
+- name: OECD Visual Representation
+  source_link: https://oneearth.uts.edu.au/data/20/oecd-europe/LB
+  description: Maps/graphs of outputs of OECD.  Click on DATA in menu at top to see
+    other regions
+  metadata:
+    data_type: Information
+    region: Global
+    category: Global
+    sub_category: OCED (One Earth Climate Model)
+    api_available: false
+- name: 'OECD Book Chapter 4: Achieving the Paris Climate Agreement Goals pp 61–77'
+  source_link: https://link.springer.com/chapter/10.1007/978-3-030-99177-7_4
+  description: 'Chapter 4 of the Achieving the Paris Climate Agreement Goals pp 61–77
+    of the book. Classification Systems for Setting Net-Zero Targets for Industries.
+
+
+    Abstract
+
+    The structure of the Global Industry Classification Standard (GICS) system and
+    how it is used in the OECM are described, as well as how the statistical data
+    of the International Energy Agency (IEA) were merged with the GICS structure.
+    The development of the pathways for the industry and service sectors, based on
+    the GICS and IEA data, is explained, together with the parameters that are important
+    for the financial industry. In this context, the definitions of Scope 1, 2, and
+    3 emissions newly developed for the OECM are explained, as well as how the systemic
+    error of double counting in the original procedure can now be avoided.'
+  metadata:
+    data_type: Information
+    data_format: Unstructured
+    region: Global
+    category: Global
+    api_available: false
+- name: 10 Climate Change Sources
+  source_link: https://deepchecks.com/free-climate-environment-datasets/
+  description: null
+  metadata:
+    api_available: false
+- name: Food DB
+  source_link: https://foodb.ca/about
+  description: FooDB is the world’s largest and most comprehensive resource on food
+    constituents, chemistry and biology. It provides information on both macronutrients
+    and micronutrients, including many of the constituents that give foods their flavor,
+    color, taste, texture and aroma. Each chemical entry in the FooDB contains more
+    than 100 separate data fields covering detailed compositional, biochemical and
+    physiological information (obtained from the literature). This includes data on
+    the compound’s nomenclature, its description, information on its structure, chemical
+    class, its physico-chemical data, its food source(s), its color, its aroma, its
+    taste, its physiological effect, presumptive health effects (from published studies),
+    and concentrations in various foods. Users are able to browse or search FooDB
+    by food source, name, descriptors, function or concentrations. Depending on individual
+    preferences users are able to view the content of FooDB from the Food Browse (listing
+    foods by their chemical composition) or the Compound Browse (listing chemicals
+    by their food sources).
+  metadata:
+    category: Natural Resources
+    sub_category: Food
+    api_available: false
+- name: IPCC (The Intergovernmental Panel on Climate Change) Synthesis Report of the
+    Sixth Assessment Report in March of 2023
+  source_link: https://www.ipcc.ch/ar6-syr/
+  description: 'The IPCC prepares comprehensive Assessment Reports about the state
+    of scientific, technical and socio-economic knowledge on climate change, its impacts
+    and future risks, and options for reducing the rate at which climate change is
+    taking place. The latest report is the Sixth Assessment Report which consists
+    of three Working Group contributions and a Synthesis Report. The Working Group
+    I contribution was finalized in August 2021, the Working Group II contribution
+    in February 2022, the Working Group III contribution in April 2022 and the Synthesis
+    Report in March 2023. '
+  metadata:
+    data_type: Information
+    data_format: Unstructured
+    region: Global
+    category: Global,ALL
+    api_available: false
+- name: 'OECD FULL Book: Achieving the Paris Climate Agreement Goals'
+  source_link: https://link.springer.com/book/10.1007/978-3-030-99177-7#toc
+  description: Entire book.
+  metadata:
+    data_type: Information
+    data_format: Unstructured
+    region: Global
+    category: Global
+    api_available: false
+- name: OECD Policy Recommendations
+  source_link: https://oneearth.uts.edu.au/policy-recommendation
+  description: OECD Policy Recommendations at Global Level only
+  metadata:
+    data_type: Information
+    data_format: Unstructured
+    region: Global
+    category: Global
+    api_available: false
+- name: ClimateBert
+  source_link: https://www.chatclimate.ai/
+  description: 'ClimateBert is the name of both our large language model (LLM) and
+    our ensemble of downstream task models.  Using the DistilRoBERTa model (https://huggingface.co/distilbert/distilroberta-base)
+    as starting point, the ClimateBERT language model is additionally pretrained on
+    a text corpus comprising climate-related research paper abstracts, corporate and
+    general news and reports from companies.  The references include the IPCC reports
+    only: https://www.chatclimate.ai/references.  Another point of reference to review:
+    https://arxiv.org/abs/2310.08096'
+  metadata:
+    data_type: Data,Information
+    data_format: Unstructured
+    region: Global
+    category: Global,ALL
+    api_available: false
+- name: Common Crawl
+  source_link: https://commoncrawl.org/get-started
+  description: The Common Crawl corpus contains petabytes of data, regularly collected
+    since 2008.  The corpus contains raw web page data, metadata extracts, and text
+    extracts.  Common Crawl data is stored on Amazon Web Services’ Public Data Sets
+    and on multiple academic cloud platforms across the world.  Access to the corpus
+    hosted by Amazon is free.  You may use Amazon’s cloud platform to run analysis
+    jobs directly against it or you can download it, whole or in part.  You can search
+    for pages in our corpus using the Common Crawl URL Index. Check out the Example
+    Projects, view Use Cases, or Statistics for our crawls.
+  metadata:
+    data_type: Information
+    data_format: Unstructured
+    region: Global
+    category: Global,ALL
+    api_available: false
+- name: IPCC Chat
+  source_link: https://ipcc.chat/
+  description: This is an interface to help you understand the latest climate change
+    report from the Intergovernmental Panel on Climate Change (IPCC). You can ask
+    question about the report and get answers from our AI.The IPCC is the United Nations
+    body for assessing the science related to climate change. This program is still
+    in it early phase, so you might expect some bugs. To use this tools at its best,
+    you should ask long and detailed question, the more details you put the more precise
+    the answer will be.
+  metadata:
+    data_type: Information
+    data_format: Unstructured
+    region: Global
+    category: Global,ALL
+    api_available: false
+- name: 'Nasdaq-100: Company Fundamental Data'
+  source_link: https://www.kaggle.com/datasets/ifuurh/nasdaq100-fundamental-data
+  description: 'Nasdaq-100: Company Fundamental Data'
+  metadata:
+    data_type: Data
+    data_format: Structured Data
+    category: Organisations,Industry
+    api_available: false
+    license_type: https://creativecommons.org/publicdomain/zero/1.0/
+- name: S&P 500 Companies
+  source_link: https://www.kaggle.com/datasets/aakashshinde1507/s-and-p-500-companies
+  description: S&P 500 Companies
+  metadata:
+    data_type: Data
+    data_format: Structured Data
+    category: Organisations,Industry
+    api_available: false
+    license_type: https://creativecommons.org/publicdomain/zero/1.0/
+- name: Done Deal / Adverts Mobile Phone Data
+  source_link: https://docs.google.com/spreadsheets/d/1mSgVCZBcSdgGgXZ-MTmcAEXa3-rISBoSdL6t8EMUCRI/edit?usp=sharing
+  description: 'Company Market File with mobile phone data and emissions.  Other things
+    to consider: Individual product level, Ecological Footprint including emissions
+
+    Usage Phase
+
+    Weight, Waste
+
+    Life Cycle Costings
+
+    Customer Lifetime Value
+
+    '
+  metadata:
+    data_type: Data,D&G
+    data_format: Structured Data
+    category: Product
+    api_available: false
+- name: SuEatable
+  source_link: https://docs.google.com/spreadsheets/d/1Ie14E7485_7KgUrLAkaWxoU9qel0yBRE/edit?usp=drive_link&ouid=104931015356307806230&rtpof=true&sd=true
+  description: 'SueEatable Food database
+
+    '
+  metadata:
+    data_type: Data
+    data_format: Structured Data
+    category: Product
+    api_available: false
+- name: "Organisation for Economic Co-operation and Development (OECD) \nDATA EXPLORER"
+  source_link: https://data-explorer.oecd.org/
+  description: 'The Organisation for Economic Co-operation and Development (OECD)
+    is an international organisation that works to build better policies for better
+    lives.  38 OECD country data
+
+
+    Some Data hasn''t yet been migrated from old site, here: https://stats.oecd.org/Index.aspx?DataSetCode=MATERIAL_RESOURCES'
+  metadata:
+    region: Global
+    category: Global
+    api_available: false
+- name: Globally representative evidence on the actual and perceived support for climate
+    action - 2024
+  source_link: https://www.nature.com/articles/s41558-024-01925-3
+  description: Mitigating climate change necessitates global cooperation, yet global
+    data on individuals’ willingness to act remain scarce. In this study, we conducted
+    a representative survey across 125 countries, interviewing nearly 130,000 individuals.
+    Our findings reveal widespread support for climate action. Notably, 69% of the
+    global population expresses a willingness to contribute 1% of their personal income,
+    86% endorse pro-climate social norms and 89% demand intensified political action.
+    Countries facing heightened vulnerability to climate change show a particularly
+    high willingness to contribute. Despite these encouraging statistics, we document
+    that the world is in a state of pluralistic ignorance, wherein individuals around
+    the globe systematically underestimate the willingness of their fellow citizens
+    to act. This perception gap, combined with individuals showing conditionally cooperative
+    behaviour, poses challenges to further climate action. Therefore, raising awareness
+    about the broad global support for climate action becomes critically important
+    in promoting a unified response to climate change.
+  metadata:
+    data_type: Information
+    data_format: Unstructured
+    region: Global
+    category: Global
+    sub_category: Communications
+    api_available: false
+    source_author: Nature.com
+- name: MSCI
+  source_link: https://www.msci-institute.com/sustainability-research-portal/
+  description: Recommended research papers from MSCI
+  metadata:
+    data_type: Information
+    data_format: Unstructured
+    region: Global
+    category: Global,Organisations
+    api_available: false
+- name: IEA Data
+  source_link: https://www.iea.org/data-and-statistics
+  description: null
+  metadata:
+    api_available: false
+- name: 'S&P Dow Jones Indices: S&P Paris-Aligned & Climate Transition (PACT) Indices
+    Methodology'
+  source_link: https://www.spglobal.com/spdji/en/documents/methodologies/methodology-sp-paris-aligned-climate-transition-pact-indices.pdf?utm_source=pdf_additional_material
+  description: 'S&P Global Trucost Climate Impact Sectors Classification
+
+    https://www.spglobal.com/spdji/en/documents/additional-material/trucost-climate-impact-sectors-classification.pdf
+
+
+    Additional info on equities and climate 1.5 indices
+
+    '
+  metadata:
+    api_available: false
+- name: 'IRELAND Fossil Fuel Subsidies Model in Ireland only
+
+    '
+  source_link: https://link.springer.com/article/10.1007/s10640-023-00782-6#Tab2
+  description: Comparison of Carbon Tax vs Reducing Fossil Fuel Subsidies
+  metadata:
+    data_type: Information
+    data_format: Unstructured
+    region: National
+    category: National
+    sub_category: Fossil Fuel Subsidies,Carbon Tax
+    api_available: false
+- name: 'Directory of Databases
+
+    Raw Materials'
+  source_link: http://www.foramproject.net/wp-content/uploads/2017/03/FORAM-Directory-of-Databases_v1.pdf
+  description: 'Directory of Databases
+
+    Raw Materials'
+  metadata:
+    region: Global
+    category: Global,Raw Materials
+    api_available: false
+- name: MARKET SENTIMENT Industry Rankings by public vote
+  source_link: null
+  description: 'Aggregate existing poll data if any and combine with D&G Poll data
+
+    '
+  metadata:
+    data_type: D&G
+    api_available: false
+- name: Ecological footprint
+  source_link: https://footprint.info.yorku.ca/data/
+  description: "An ecological deficit occurs when the Ecological Footprint of a population\
+    \ exceeds the biocapacity of the area available to that population. A national\
+    \ ecological deficit means that the country is net-importing biocapacity through\
+    \ trade, liquidating national ecological assets or emitting more carbon dioxide\
+    \ waste into the atmosphere than its own ecosystems absorb.  Data Definitions:\
+    \  https://data.footprintnetwork.org/#/abouttheData\nAlso See Methodology paper:\
+    \ \nhttps://www.footprintnetwork.org/resources/data/\nhttps://www.researchgate.net/publication/265820809_Ecological_footprint_Evaluation_methodology_and_international_benchmarking/link/5665788908ae192bbf922e5e/download?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6InB1YmxpY2F0aW9uIiwicGFnZSI6InB1YmxpY2F0aW9uIn19"
+  metadata:
+    api_available: false
+- name: 'IRELAND Fossil Fuel Subsidies plan
+
+
+    '
+  source_link: https://www.climatecouncil.ie/councilpublications/councilworkingpaperseries/Working%20Paper%20No.%2015.pdf
+  description: 'Analysis on Reform of Fossil Fuel
+
+    Subsidies 2022'
+  metadata:
+    api_available: false
+- name: World Bank Compliation 2011-2021 10 Years of Global ESG SDG History
+  source_link: https://data.world/esgdata/10-years-of-global-esg-sdg-history/workspace/file?filename=10+Years+of+Global+ESG+SDG+history.xlsx
+  description: 10 Years of Global ESG SDG History World Bank Compliation 2011-2021
+  metadata:
+    api_available: false
+- name: Public Bcorps
+  source_link: https://data.world/blab/public-b-corps
+  description: List of Public Bcorps
+  metadata:
+    api_available: false
+- name: Bcorp Impact data
+  source_link: https://data.world/blab/b-corp-impact-data/workspace/project-summary?agentid=blab&datasetid=b-corp-impact-data
+  description: All B Corps
+  metadata:
+    api_available: false
+- name: 'Reprisk
+
+    '
+  source_link: https://www.reprisk.com/research-lab
+  description: 'Research papers from Reprisk
+
+    '
+  metadata:
+    api_available: false
+- name: EU MP speaks out against Fossil Fuel Lobbyists
+  source_link: https://www.euronews.com/2023/02/25/this-is-what-its-like-to-be-lobbied-by-the-fossil-fuel-industry-and-why-it-needs-to-end
+  description: EU MP speaks out against Fossil Fuel Lobbyists
+  metadata:
+    api_available: false
+- name: FIT FOR 55
+  source_link: null
+  description: null
+  metadata:
+    api_available: false
+- name: EU GREEN NEW DEAL
+  source_link: null
+  description: null
+  metadata:
+    api_available: false
+- name: Data Centre Emissions Study
+  source_link: https://www.sciencedirect.com/science/article/pii/S0959652622032115
+  description: null
+  metadata:
+    api_available: false
+- name: 'Big Data:  The New Oil needs ethicists to help determine rationing of data
+    and resource allocation'
+  source_link: https://link.springer.com/article/10.1007/s11948-019-00171-7
+  description: null
+  metadata:
+    api_available: false
+- name: Network study on resource allocation
+  source_link: https://link.springer.com/article/10.1007/s10640-021-00583-9
+  description: null
+  metadata:
+    api_available: false
+- name: 'Legal Clauses company (check email)
+
+    '
+  source_link: null
+  description: null
+  metadata:
+    api_available: false
+- name: CO2 Coalition
+  source_link: https://co2coalition.org/#:~:text=The%20CO2%20Coalition%20was%20established,our%20lives%20and%20the%20economy.
+  description: null
+  metadata:
+    api_available: false
+- name: CO2 Coalition Wikipedia Page
+  source_link: https://en.wikipedia.org/wiki/CO2_Coalition#External_links
+  description: null
+  metadata:
+    api_available: false
+- name: permutable.ai
+  source_link: https://edyi6uek65.execute-api.us-east-1.amazonaws.com/prod/api/v2.0/docs
+  description: https://permutable.ai/permutable-ai-releases-data-on-companies-that-are-greenwashing-according-to-our-greenproof-framework/#
+  metadata:
+    api_available: false
+- name: Greenwatch.AI
+  source_link: https://greenwatch.ai/
+  description: 'https://greenwatch.ai/greenwatch-methodology/
+
+
+    https://people.ucd.ie/andreas.hoepner'
+  metadata:
+    api_available: false
+- name: Assessing Large Language Models on Climate Information
+  source_link: https://openreview.net/forum?id=IAWIgFT71j
+  description: null
+  metadata:
+    api_available: false
+- name: 'ClimateBERT-NetZero: Detecting and Assessing Net Zero and Reduction
+
+    Targets'
+  source_link: https://arxiv.org/pdf/2310.08096.pdf
+  description: null
+  metadata:
+    api_available: false
+- name: Skeptical Science
+  source_link: https://skepticalscience.com/argument.php
+  description: null
+  metadata:
+    api_available: false
+- name: 'SSP Explainer
+
+    '
+  source_link: https://www.carbonbrief.org/explainer-how-shared-socioeconomic-pathways-explore-future-climate-change/
+  description: These SSPs are now being used as important inputs for the latest climate
+    models, feeding into the Intergovernmental Panel on Climate Change (IPCC) sixth
+    assessment report
+  metadata:
+    api_available: false
+- name: 'SSP: The Shared Socioeconomic Pathways and their energy, land use, and greenhouse
+    gas emissions implications: An overview'
+  source_link: https://www.sciencedirect.com/science/article/pii/S0959378016300681
+  description: null
+  metadata:
+    api_available: false
+- name: How ML will fix supply chains  Harvard Biz review
+  source_link: https://hbr.org/2024/03/how-machine-learning-will-transform-supply-chain-management#:~:text=This%20new%20methodology%2C%20which%20we,shipment%20transactions%2C%20financial%20parameters%2C%20marketing
+  description: null
+  metadata:
+    api_available: false
+- name: 'Critical Industries Directive
+
+    '
+  source_link: https://www.critical-entities-resilience-directive.com/
+  description: null
+  metadata:
+    api_available: false
+- name: Essential Services in Ireland
+  source_link: https://www.gov.ie/en/publication/c9158-essential-services/?referrer=http://www.gov.ie/en/publication/dfeb8f-list-of-essential-service-providers-under-new-public-health-guideline
+  description: null
+  metadata:
+    api_available: false
+- name: 'Industries that will never go away - essential?
+
+    '
+  source_link: https://www.investopedia.com/articles/personal-finance/040515/industries-will-never-go-away.asp
+  description: null
+  metadata:
+    api_available: false
+- name: 'Essential services list Mississippi
+
+    '
+  source_link: https://www.mssupervisors.org/detailed-list-what-considered-essential-or-non-essential-mema
+  description: null
+  metadata:
+    api_available: false
+- name: Watershed
+  source_link: https://watershed.com/solutions/consumer-goods
+  description: null
+  metadata:
+    api_available: false
+- name: Watershed copy
+  source_link: https://watershed.com/solutions/consumer-goods
+  description: null
+  metadata:
+    api_available: false
+- name: 'World scientists’ warning: The behavioural crisis driving ecological overshoot'
+  source_link: https://journals.sagepub.com/doi/10.1177/00368504231201372
+  description: null
+  metadata:
+    api_available: false
+    source_author: Science Progress Volume 106, Issue 3
+- name: Natured Based Solutions
+  source_link: https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/evaluating-impact-nature-based-solutions-handbook-practitioners-2021-05-06_en
+  description: null
+  metadata:
+    api_available: false
+- name: Best sources for climate news
+  source_link: https://onlinepublichealth.gwu.edu/resources/sources-for-climate-news/
+  description: null
+  metadata:
+    api_available: false
+- name: NASA, NOAA, Copernicus in Europe
+  source_link: null
+  description: null
+  metadata:
+    api_available: false
+- name: State of Sustainable Business
+  source_link: https://static1.squarespace.com/static/643171fceb2c486d87f28f46/t/660b156091a2514b81128b25/1712002851624/StateofSustainableBusiness.pdf
+  description: null
+  metadata:
+    api_available: false
+- name: Best and Worst States for Climate Change
+  source_link: https://wisevoter.com/report/best-worst-states-for-climate-change/
+  description: null
+  metadata:
+    api_available: false
+- name: EU Electricity in 2023
+  source_link: https://ember-climate.org/insights/research/european-electricity-review-2024/
+  description: null
+  metadata:
+    api_available: false
+- name: Global Litigation Climate
+  source_link: https://scholarship.law.columbia.edu/cgi/viewcontent.cgi?article=1213&context=sabin_climate_change
+  description: null
+  metadata:
+    api_available: false
+- name: Good Country Index
+  source_link: https://goodcountry.org/index/source-data/
+  description: 'General Explanation
+
+    Countries receive scores on each indicator as a fractional rank relative to all
+    countries for which data is available (after most data is corrected for GDP, i.e.
+    the economic size of the country). The actual simple ranks per category are based
+    on the mean fractional ranks on the 5 indicators per category (subject to maximum
+    2 missing values per category). The overall rank is based on the average of the
+    category ranks. In case of equal overall ranks, the country with the lowest low
+    score on any of the 7 categories gets pushed down.
+
+
+    GOOD COUNTRY INDEX 1.5
+
+
+    Overall Rank
+
+
+    The overall rank is based on the average of the category ranks. 26 (out of 35)
+    indicators are based on 2020 data, 7 on 2019 data, 2018 data for Renewable energy
+    share, and 2017 Ecological footprint data. The actual overall rank is based on
+    169 countries included in the index and the mean rank score for the 7 category
+    ranks.'
+  metadata:
+    api_available: false
+- name: Planetary Boundaries Model
+  source_link: https://www.sciencedirect.com/science/article/pii/S0301479722026056
+  description: 'Research on a potential model for planetary boundaries
+
+    '
+  metadata:
+    api_available: false
+- name: ICCC copy
+  source_link: https://www.epa.ie/our-services/monitoring--assessment/climate-change/irelands-climate-change-assessment-icca/
+  description: 'Ireland’s Climate Change Assessment (ICCA) for the first time provides
+    a comprehensive and authoritative assessment of the state of knowledge around
+    all key aspects of climate change, with a central focus on Ireland. The objective
+    of Ireland’s Climate Change Assessment (ICCA) is the following:
+
+
+    To deliver a comprehensive report on our understanding of climate change.
+
+    The option to respond to the challenges it poses.
+
+    To identify opportunities that may arise from the planned transition to a climate
+    neutral, biodiversity-rich, environmentally sustainable and climate resilient
+    economy and society.
+
+    The report provides an assessment of our understanding of climate change, tying
+    together all available lines of evidence to provide actionable information. This
+    is based on scientific research and systematic observations in Ireland, linked
+    to EU and global analysis. ICCA aims to provide summary information that can inform
+    decision-making on climate actions.
+
+
+    ICCA also covers the following:
+
+
+    Identifying research gaps to inform future research investment needs and priority
+    research issues.
+
+    Contributing to the development of a national assessment and analysis capacity.
+
+    Enhancing engagement with similar developments at European and international levels.
+
+    Establishing a structure and process to develop future reports.
+
+    The ICCA report is provided in four volumes. Each volume includes a short Summary
+    for Policymakers. Accompanying the four volumes is a Synthesis Report which integrates
+    key findings across the underlying volumes and provides an accessible overall
+    summary.'
+  metadata:
+    api_available: false
+- name: EU Taxonomy
+  source_link: null
+  description: null
+  metadata:
+    api_available: false
+- name: Land Use Models
+  source_link: https://www.sciencedirect.com/science/article/abs/pii/S0169204617302396
+  description: null
+  metadata:
+    api_available: false
+- name: ESG Risk Analysis model
+  source_link: https://onlinelibrary.wiley.com/doi/full/10.1111/risa.14195
+  description: null
+  metadata:
+    api_available: false
+- name: Consumer Discretionary Models
+  source_link: https://www.britannica.com/money/consumer-discretionary-stocks
+  description: null
+  metadata:
+    api_available: false
+- name: 'GSN Global Safety Net
+
+    '
+  source_link: https://www.globalsafetynet.app/science/
+  description: The Global Safety Net initiative has spearheaded or supported over
+    20 scientific papers that fill critical knowledge gaps to help governments, philanthropists,
+    companies, and nonprofit organizations in their efforts to conserve and restore
+    biodiversity and the ecosystem services upon which humanity depends. These include
+    “A Global Deal for Nature” (Dinerstein et al. 2019) that introduced the global
+    30x30 conservation target to peer-reviewed literature;
+  metadata:
+    api_available: false
+metric_definitions:
+- metric_key: 01_necessity_score
+  feature_column: f_01_necessity_score
+  sheet_info:
+    sheet_name: 1 Necessity Score (Core)
+    sheet_number: '01'
+    thematic_focus: Social & economic indispensability of coal today
+  basic_info:
+    title: NECESSITY SCORE
+    slug: necessity_score
+    data_fields_required: Outputs of formulas in Column G and Weighting in Column
+      H
+    formula: TBA Combination of metrics below
+    weighting_in_metric: 0.0
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    readiness_status: Draft
+  weight_columns:
+    H5: w_01_necessity_score_H5
+    H10: w_01_necessity_score_H10
+    H20: w_01_necessity_score_H20
+- metric_key: 01__of_population_dependent_on_industry_for_income_survival
+  feature_column: f_01__of_population_dependent_on_industry_for_income_survival
+  sheet_info:
+    sheet_name: 1 Necessity Score (Core)
+    sheet_number: '01'
+    thematic_focus: Social & economic indispensability of coal today
+  basic_info:
+    title: '% of population dependent on industry for income survival'
+    slug: '%_of_population_dependent_on_industry_for_income_survival'
+    formula: NS1 = A1 + A2 /2 + A3
+    weighting_in_metric: 0.0
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    readiness_status: Draft
+  weight_columns:
+    H5: w_01__of_population_dependent_on_industry_for_income_survival_H5
+    H10: w_01__of_population_dependent_on_industry_for_income_survival_H10
+    H20: w_01__of_population_dependent_on_industry_for_income_survival_H20
+- metric_key: 01__of_global_health_housing_food_or_safety_services_dependent_on_this_industry
+  feature_column: f_01__of_global_health_housing_food_or_safety_services_dependent_on_this_industry
+  sheet_info:
+    sheet_name: 1 Necessity Score (Core)
+    sheet_number: '01'
+    thematic_focus: Social & economic indispensability of coal today
+  basic_info:
+    title: '% of global health, housing, food, or safety services dependent on this
+      industry'
+    slug: '%_of_global_health,_housing,_food,_or_safety_services_dependent_on_this_industry'
+    weighting_in_metric: 0.0
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    readiness_status: Draft
+  weight_columns:
+    H5: w_01__of_global_health_housing_food_or_safety_services_dependent_on_this_industry_H5
+    H10: w_01__of_global_health_housing_food_or_safety_services_dependent_on_this_industry_H10
+    H20: w_01__of_global_health_housing_food_or_safety_services_dependent_on_this_industry_H20
+- metric_key: 01__of_industry_output_directly_fulfilling_human_health__well_being
+  feature_column: f_01__of_industry_output_directly_fulfilling_human_health__well_being
+  sheet_info:
+    sheet_name: 1 Necessity Score (Core)
+    sheet_number: '01'
+    thematic_focus: Social & economic indispensability of coal today
+  basic_info:
+    title: '% of industry output directly fulfilling human health & well-being'
+    slug: '%_of_industry_output_directly_fulfilling_human_health_&_well_being'
+    formula: NS3 = I+II+III+IV+V+VI+VII / 7
+    weighting_in_metric: 0.0
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    readiness_status: Draft
+  weight_columns:
+    H5: w_01__of_industry_output_directly_fulfilling_human_health__well_being_H5
+    H10: w_01__of_industry_output_directly_fulfilling_human_health__well_being_H10
+    H20: w_01__of_industry_output_directly_fulfilling_human_health__well_being_H20
+- metric_key: 01__of_industry_output_directly_fulfilling_education_
+  feature_column: f_01__of_industry_output_directly_fulfilling_education_
+  sheet_info:
+    sheet_name: 1 Necessity Score (Core)
+    sheet_number: '01'
+    thematic_focus: Social & economic indispensability of coal today
+  basic_info:
+    title: '% of industry output directly fulfilling education '
+    slug: '%_of_industry_output_directly_fulfilling_education_'
+    weighting_in_metric: 0.0
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    readiness_status: Draft
+  weight_columns:
+    H5: w_01__of_industry_output_directly_fulfilling_education__H5
+    H10: w_01__of_industry_output_directly_fulfilling_education__H10
+    H20: w_01__of_industry_output_directly_fulfilling_education__H20
+- metric_key: 01_ratio_of_industrys_output_classified_as_a_public_good_vs_private_consumption
+  feature_column: f_01_ratio_of_industrys_output_classified_as_a_public_good_vs_private_consumption
+  sheet_info:
+    sheet_name: 1 Necessity Score (Core)
+    sheet_number: '01'
+    thematic_focus: Social & economic indispensability of coal today
+  basic_info:
+    title: Ratio of industry’s output classified as a public good vs. private consumption.
+    slug: ratio_of_industry’s_output_classified_as_a_public_good_vs._private_consumption.
+    data_fields_required: TBA
+    weighting_in_metric: 0.0
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    readiness_status: Draft
+  weight_columns:
+    H5: w_01_ratio_of_industrys_output_classified_as_a_public_good_vs_private_consumption_H5
+    H10: w_01_ratio_of_industrys_output_classified_as_a_public_good_vs_private_consumption_H10
+    H20: w_01_ratio_of_industrys_output_classified_as_a_public_good_vs_private_consumption_H20
+- metric_key: 04_composite_score_or_the_st_fvi_core_metric
+  feature_column: f_04_composite_score_or_the_st_fvi_core_metric
+  sheet_info:
+    sheet_name: 4 Emissions Score
+    sheet_number: '04'
+    thematic_focus: GHG impact & regulatory exposure
+  basic_info:
+    title: Composite Score or the 1st FVI Core Metric
+    slug: composite_score_or_the_1st_fvi_core_metric
+    details: Outputs of formulas in Column G and Weighting in Column H
+    data_fields_required: TBA Combination of metrics below
+    weighting_in_metric: 0.0
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    readiness_status: Draft
+  weight_columns:
+    H5: w_04_composite_score_or_the_st_fvi_core_metric_H5
+    H10: w_04_composite_score_or_the_st_fvi_core_metric_H10
+    H20: w_04_composite_score_or_the_st_fvi_core_metric_H20
+- metric_key: 04_total_emissions_intensity
+  feature_column: f_04_total_emissions_intensity
+  sheet_info:
+    sheet_name: 4 Emissions Score
+    sheet_number: '04'
+    thematic_focus: GHG impact & regulatory exposure
+  basic_info:
+    title: Total Emissions Intensity
+    slug: total_emissions_intensity
+    details: When output doesn't exist, replace with CO₂e per employee or CO₂e per
+      unit of value added.
+    data_fields_required: CO2 per ton output
+    formula: '1.797619048'
+    weighting_in_metric: 0.35
+    data_source: "\temissions_medium_granularity.csv; Climate TRACE V4 2024 CSV \n\
+      climatetrace.org\n; UNIDO INDSTAT 2025 API \nstat.unido.org"
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    scoring_methodology_notes: CH₄ & N₂O converted with GWP-100 (AR6); assets ↔ GICS
+      w/ manual concordance.
+    readiness_status: Draft
+  weight_columns:
+    H5: w_04_total_emissions_intensity_H5
+    H10: w_04_total_emissions_intensity_H10
+    H20: w_04_total_emissions_intensity_H20
+- metric_key: 04_absolute_global_emissions_share
+  feature_column: f_04_absolute_global_emissions_share
+  sheet_info:
+    sheet_name: 4 Emissions Score
+    sheet_number: '04'
+    thematic_focus: GHG impact & regulatory exposure
+  basic_info:
+    title: Absolute Global Emissions Share*
+    slug: absolute_global_emissions_share*
+    details: '% of global CO₂e from this industry (using EDGAR, OWID, etc.).  Industries
+      that dominate emissions must lead reductions.'
+    data_fields_required: 1. Industry emissions
+    formula: '0.2765567766'
+    weighting_in_metric: 0.1
+    data_source: "annual-co2-emission.csv; EDGAR v8 (1970-2022) \nedgar.jrc.ec.europa.eu\n\
+      ; OWID CO₂ DB 2024 \nourworldindata.org"
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    scoring_methodology_notes: Denominator uses EDGAR; numerator sliced by IPCC→GICS
+      bridge; land-use CO₂ excluded.
+    readiness_status: Draft
+  weight_columns:
+    H5: w_04_absolute_global_emissions_share_H5
+    H10: w_04_absolute_global_emissions_share_H10
+    H20: w_04_absolute_global_emissions_share_H20
+- metric_key: 04_policy_exempt_emissions
+  feature_column: f_04_policy_exempt_emissions
+  sheet_info:
+    sheet_name: 4 Emissions Score
+    sheet_number: '04'
+    thematic_focus: GHG impact & regulatory exposure
+  basic_info:
+    title: Policy-Exempt Emissions
+    slug: policy_exempt_emissions
+    details: Penalizes industries hiding in legal loopholes.
+    formula: '1.0'
+    weighting_in_metric: 0.05
+    data_source: "\tWB Carbon Pricing Dashboard 2025 CSV \ncarbonpricingdashboard.worldbank.org\n\
+      ; EDGAR v8 sector totals \nedgar.jrc.ec.europa.eu\n; OECD EPS Index (1990-2020)\
+      \ \noecd.org"
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    scoring_methodology_notes: Coverage % is CO₂e (all gases); fallback to EPS where
+      pricing data = NA.
+    readiness_status: Draft
+  weight_columns:
+    H5: w_04_policy_exempt_emissions_H5
+    H10: w_04_policy_exempt_emissions_H10
+    H20: w_04_policy_exempt_emissions_H20
+- metric_key: 04_lifecycle_emissions_coverage
+  feature_column: f_04_lifecycle_emissions_coverage
+  sheet_info:
+    sheet_name: 4 Emissions Score
+    sheet_number: '04'
+    thematic_focus: GHG impact & regulatory exposure
+  basic_info:
+    title: Lifecycle Emissions Coverage*
+    slug: lifecycle_emissions_coverage*
+    details: Assesses whether all emissions types (Scope 1â€“3) are tracked. Encourages
+      full reporting responsibility.
+    data_fields_required: Scope 1, 2, 3 emissions by sector or company
+    formula: '0.3'
+    weighting_in_metric: 0.35
+    data_source: CDP Dataset, OECD Scope 3 Explorer, GHG Protocol
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    readiness_status: Draft
+  weight_columns:
+    H5: w_04_lifecycle_emissions_coverage_H5
+    H10: w_04_lifecycle_emissions_coverage_H10
+    H20: w_04_lifecycle_emissions_coverage_H20
+- metric_key: 04_historical_emissions_debt
+  feature_column: f_04_historical_emissions_debt
+  sheet_info:
+    sheet_name: 4 Emissions Score
+    sheet_number: '04'
+    thematic_focus: GHG impact & regulatory exposure
+  basic_info:
+    title: Historical Emissions Debt
+    slug: historical_emissions_debt
+    details: Reflects total emissions burden contributed by the sector historically,
+      assigning higher score to older polluters.
+    data_fields_required: Cumulative COâ‚‚e from historical inventories
+    formula: '0.08'
+    weighting_in_metric: 0.05
+    data_source: 'OWID historical emissions: https://github.com/owid/co2-data'
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    readiness_status: Draft
+  weight_columns:
+    H5: w_04_historical_emissions_debt_H5
+    H10: w_04_historical_emissions_debt_H10
+    H20: w_04_historical_emissions_debt_H20
+- metric_key: 04_carbon_abatement_readiness
+  feature_column: f_04_carbon_abatement_readiness
+  sheet_info:
+    sheet_name: 4 Emissions Score
+    sheet_number: '04'
+    thematic_focus: GHG impact & regulatory exposure
+  basic_info:
+    title: Carbon Abatement Readiness*
+    slug: carbon_abatement_readiness*
+    details: 'Captures readiness to transition: measures % of emissions covered by
+      abatement plans, CCS, or efficiency programs.'
+    data_fields_required: '% coverage of abatement tech or declared plans'
+    formula: '0.2'
+    weighting_in_metric: 0.1
+    data_source: IEA Carbon Abatement Database, Climate Policy Radar
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    readiness_status: Draft
+  weight_columns:
+    H5: w_04_carbon_abatement_readiness_H5
+    H10: w_04_carbon_abatement_readiness_H10
+    H20: w_04_carbon_abatement_readiness_H20
+- metric_key: 20_composite_score_or_the_st_fvi_core_metric
+  feature_column: f_20_composite_score_or_the_st_fvi_core_metric
+  sheet_info:
+    sheet_name: 20 Economic Score
+    sheet_number: '20'
+    thematic_focus: Profitability & macro-exposure (prices, GDP elasticity)
+  basic_info:
+    title: Composite Score or the 1st FVI Core Metric
+    slug: composite_score_or_the_1st_fvi_core_metric
+    details: Outputs of formulas in Column G and Weighting in Column H
+    weighting_in_metric: 0.0
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    readiness_status: Draft
+  weight_columns:
+    H5: w_20_composite_score_or_the_st_fvi_core_metric_H5
+    H10: w_20_composite_score_or_the_st_fvi_core_metric_H10
+    H20: w_20_composite_score_or_the_st_fvi_core_metric_H20
+- metric_key: 20_global_gdp_dependency__coal_mining
+  feature_column: f_20_global_gdp_dependency__coal_mining
+  sheet_info:
+    sheet_name: 20 Economic Score
+    sheet_number: '20'
+    thematic_focus: Profitability & macro-exposure (prices, GDP elasticity)
+  basic_info:
+    title: Global GDP Dependency – Coal Mining
+    slug: global_gdp_dependency_–_coal_mining
+    details: Measures how economically significant coal is to the global economy,
+      by estimating its share of total GDP. A low % suggests coal is economically
+      marginal and easier to phase out. A high % implies structural dependence.
+    formula: '
+
+      = (Global_Coal_Mining_GDP / Global_Total_GDP) * 100
+
+
+
+
+      New formula
+
+      = (SUM(Coal_Rents_% * Country_GDP_USD)) / Global_GDP_USD * 100
+
+      '
+    weighting_in_metric: 0.0
+    data_source: https://databank.worldbank.org/metadataglossary/world-development-indicators/series/NY.GDP.COAL.RT.ZS?utm_source=chatgpt.com
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    readiness_status: Draft
+  weight_columns:
+    H5: w_20_global_gdp_dependency__coal_mining_H5
+    H10: w_20_global_gdp_dependency__coal_mining_H10
+    H20: w_20_global_gdp_dependency__coal_mining_H20
+- metric_key: 20_national_gdp_share_coal_mining__per_country
+  feature_column: f_20_national_gdp_share_coal_mining__per_country
+  sheet_info:
+    sheet_name: 20 Economic Score
+    sheet_number: '20'
+    thematic_focus: Profitability & macro-exposure (prices, GDP elasticity)
+  basic_info:
+    title: National GDP Share (Coal Mining) – per country
+    slug: national_gdp_share_(coal_mining)_–_per_country
+    details: 'Formula not necessary, just use the World Bank Data
+
+
+      '
+    formula: ' = (CountryX_Coal_Mining_GDP / CountryX_Total_GDP) * 100
+
+
+      New Formula
+
+      = Coal_Rents_Percent_of_GDP'
+    weighting_in_metric: 0.0
+    data_source: https://databank.worldbank.org/metadataglossary/world-development-indicators/series/NY.GDP.COAL.RT.ZS?utm_source=chatgpt.com
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    readiness_status: Draft
+  weight_columns:
+    H5: w_20_national_gdp_share_coal_mining__per_country_H5
+    H10: w_20_national_gdp_share_coal_mining__per_country_H10
+    H20: w_20_national_gdp_share_coal_mining__per_country_H20
+- metric_key: 20_global_gdp_share_coal_fired_power
+  feature_column: f_20_global_gdp_share_coal_fired_power
+  sheet_info:
+    sheet_name: 20 Economic Score
+    sheet_number: '20'
+    thematic_focus: Profitability & macro-exposure (prices, GDP elasticity)
+  basic_info:
+    title: Global GDP Share (Coal-Fired Power)
+    slug: global_gdp_share_(coal_fired_power)
+    formula: '
+
+      = ((Global_Electricity_Sector_GDP * Global_Coal_Share_of_Electricity) / Global_Total_GDP)
+      * 100
+
+
+      New Formula
+
+      = ((IEA_Global_Electricity_Heat_ValueAdded_USD * WB_Global_Elec_Coal_Share)
+      / WB_Global_Total_GDP) * 100'
+    weighting_in_metric: 0.0
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    readiness_status: Draft
+  weight_columns:
+    H5: w_20_global_gdp_share_coal_fired_power_H5
+    H10: w_20_global_gdp_share_coal_fired_power_H10
+    H20: w_20_global_gdp_share_coal_fired_power_H20
+- metric_key: 20_national_gdp_share_coal_fired_power__per_country
+  feature_column: f_20_national_gdp_share_coal_fired_power__per_country
+  sheet_info:
+    sheet_name: 20 Economic Score
+    sheet_number: '20'
+    thematic_focus: Profitability & macro-exposure (prices, GDP elasticity)
+  basic_info:
+    title: National GDP Share (Coal-Fired Power) – per country
+    slug: national_gdp_share_(coal_fired_power)_–_per_country
+    formula: ' = ((CountryX_Electricity_Sector_GDP * CountryX_Coal_Share_of_Electricity)
+      / CountryX_Total_GDP) * 100'
+    weighting_in_metric: 0.0
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    readiness_status: Draft
+  weight_columns:
+    H5: w_20_national_gdp_share_coal_fired_power__per_country_H5
+    H10: w_20_national_gdp_share_coal_fired_power__per_country_H10
+    H20: w_20_national_gdp_share_coal_fired_power__per_country_H20
+- metric_key: 20_national_export_dependency__coal_mining
+  feature_column: f_20_national_export_dependency__coal_mining
+  sheet_info:
+    sheet_name: 20 Economic Score
+    sheet_number: '20'
+    thematic_focus: Profitability & macro-exposure (prices, GDP elasticity)
+  basic_info:
+    title: National Export Dependency – [Coal Mining]
+    slug: national_export_dependency_–_[coal_mining]
+    details: Measures how reliant a country’s export economy is on this industry.
+      Useful for identifying fossil fuel-exporting nations at risk during phase-outs.
+    formula: '
+
+      = (Coal_Export_Value_USD / Total_Export_Value_USD) * 100
+
+      '
+    weighting_in_metric: 0.0
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    readiness_status: Draft
+  weight_columns:
+    H5: w_20_national_export_dependency__coal_mining_H5
+    H10: w_20_national_export_dependency__coal_mining_H10
+    H20: w_20_national_export_dependency__coal_mining_H20
+- metric_key: 20_national_import_dependency__coal_fired_power_or_coal_inputs
+  feature_column: f_20_national_import_dependency__coal_fired_power_or_coal_inputs
+  sheet_info:
+    sheet_name: 20 Economic Score
+    sheet_number: '20'
+    thematic_focus: Profitability & macro-exposure (prices, GDP elasticity)
+  basic_info:
+    title: National Import Dependency – [Coal-Fired Power or Coal Inputs]
+    slug: national_import_dependency_–_[coal_fired_power_or_coal_inputs]
+    details: Reflects vulnerability and outsourcing of necessity
+    weighting_in_metric: 0.0
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    readiness_status: Draft
+  weight_columns:
+    H5: w_20_national_import_dependency__coal_fired_power_or_coal_inputs_H5
+    H10: w_20_national_import_dependency__coal_fired_power_or_coal_inputs_H10
+    H20: w_20_national_import_dependency__coal_fired_power_or_coal_inputs_H20
+- metric_key: 20_price_volatility__market_fragility
+  feature_column: f_20_price_volatility__market_fragility
+  sheet_info:
+    sheet_name: 20 Economic Score
+    sheet_number: '20'
+    thematic_focus: Profitability & macro-exposure (prices, GDP elasticity)
+  basic_info:
+    title: Price Volatility & Market Fragility
+    slug: price_volatility_&_market_fragility
+    details: 'Measures how often and how severely prices fluctuate (commodity shocks,
+      speculation, supply chain fragility).
+
+
+      Use commodity indices or sector-specific volatility ratings (e.g., energy, food,
+      tech components).'
+    weighting_in_metric: 0.0
+    data_source: https://github.com/owid/energy-data
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    readiness_status: Draft
+  weight_columns:
+    H5: w_20_price_volatility__market_fragility_H5
+    H10: w_20_price_volatility__market_fragility_H10
+    H20: w_20_price_volatility__market_fragility_H20
+- metric_key: 05_composite_score_or_the_st_fvi_core_metric
+  feature_column: f_05_composite_score_or_the_st_fvi_core_metric
+  sheet_info:
+    sheet_name: 5 Ecological Score
+    sheet_number: '05'
+    thematic_focus: Wider environmental externalities (land, water, biodiversity)
+  basic_info:
+    title: Composite Score or the 1st FVI Core Metric
+    slug: composite_score_or_the_1st_fvi_core_metric
+    details: Outputs of formulas in Column G and Weighting in Column H
+    data_fields_required: TBA Combination of metrics below
+    weighting_in_metric: 0.0
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    readiness_status: Draft
+  weight_columns:
+    H5: w_05_composite_score_or_the_st_fvi_core_metric_H5
+    H10: w_05_composite_score_or_the_st_fvi_core_metric_H10
+    H20: w_05_composite_score_or_the_st_fvi_core_metric_H20
+- metric_key: 05_land_conversion_deforestation
+  feature_column: f_05_land_conversion_deforestation
+  sheet_info:
+    sheet_name: 5 Ecological Score
+    sheet_number: '05'
+    thematic_focus: Wider environmental externalities (land, water, biodiversity)
+  basic_info:
+    title: Land Conversion Deforestation
+    slug: land_conversion_deforestation
+    weighting_in_metric: 0.0
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    readiness_status: Draft
+  weight_columns:
+    H5: w_05_land_conversion_deforestation_H5
+    H10: w_05_land_conversion_deforestation_H10
+    H20: w_05_land_conversion_deforestation_H20
+- metric_key: 05_bonus_it_has_annual_forest_loss_data_by_region_which_could_be_tied_to_coal_industry_zones
+  feature_column: f_05_bonus_it_has_annual_forest_loss_data_by_region_which_could_be_tied_to_coal_industry_zones
+  sheet_info:
+    sheet_name: 5 Ecological Score
+    sheet_number: '05'
+    thematic_focus: Wider environmental externalities (land, water, biodiversity)
+  basic_info:
+    title: 'Bonus: It has annual forest loss data by region, which could be tied to
+      coal industry zones.'
+    slug: bonus:_it_has_annual_forest_loss_data_by_region,_which_could_be_tied_to_coal_industry_zones.
+    details: 'How to use it:
+
+
+      Filter by Indonesia, Australia, India, Colombia, etc.
+
+
+      Match coal permit maps with deforestation hotspots.'
+    data_fields_required: 'What it provides: Satellite-based deforestation data at
+      high spatial resolution (30m).
+
+
+      Why it''s useful: You can overlay coal mining concession maps with deforestation
+      zones.'
+    weighting_in_metric: 0.0
+    data_source: https://data.globalforestwatch.org
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    readiness_status: Draft
+  weight_columns:
+    H5: w_05_bonus_it_has_annual_forest_loss_data_by_region_which_could_be_tied_to_coal_industry_zones_H5
+    H10: w_05_bonus_it_has_annual_forest_loss_data_by_region_which_could_be_tied_to_coal_industry_zones_H10
+    H20: w_05_bonus_it_has_annual_forest_loss_data_by_region_which_could_be_tied_to_coal_industry_zones_H20
+- metric_key: 05_land_mining
+  feature_column: f_05_land_mining
+  sheet_info:
+    sheet_name: 5 Ecological Score
+    sheet_number: '05'
+    thematic_focus: Wider environmental externalities (land, water, biodiversity)
+  basic_info:
+    title: Land Mining
+    slug: land_mining
+    weighting_in_metric: 0.0
+    data_source: https://gfr.wri.org/data-methods?utm_source=chatgpt.com
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    readiness_status: Draft
+  weight_columns:
+    H5: w_05_land_mining_H5
+    H10: w_05_land_mining_H10
+    H20: w_05_land_mining_H20
+- metric_key: 05_land_conversion
+  feature_column: f_05_land_conversion
+  sheet_info:
+    sheet_name: 5 Ecological Score
+    sheet_number: '05'
+    thematic_focus: Wider environmental externalities (land, water, biodiversity)
+  basic_info:
+    title: Land Conversion
+    slug: land_conversion
+    data_fields_required: 'Coal Infrastructure Type        Land Use Estimate        Source
+
+      Surface coal mine        ~40–80 hectares per Mt/year capacity        USGS, academic
+      studies
+
+      Underground coal mine        10–30 hectares (mostly indirect impact)        IPCC
+      reports
+
+      Coal-fired power plant        30–70 hectares per GW installed        World Bank,
+      NREL
+
+      Ash ponds + storage        Often exceeds 50–100 hectares        EPA (U.S.),
+      India CEA
+
+      Combined average footprint        ~80–150 hectares per coal plant site (with
+      ash & stack zones)'
+    formula: 'Suppose 1,000 Mt coal extracted annually via mountaintop:
+
+
+      Land use = 1,000 Mt × 12 m² = 12,000,000 m² = 1,200 ha
+
+
+      Coal ash footprint (449 plants): ~3,592 ha
+
+
+      Combined = ~4,792 ha total land conversion, or ~4.8 ha per Mt coal
+
+
+      land conversion into your Ecological Score (#4) like this:
+
+
+      Land Conversion (ha/Mt) =
+
+      (Mt_coal × 0.0012 ha/Mt) + (#_ash_plants × avg_ash_ha) / Mt_coal'
+    weighting_in_metric: 0.0
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    readiness_status: Draft
+  weight_columns:
+    H5: w_05_land_conversion_H5
+    H10: w_05_land_conversion_H10
+    H20: w_05_land_conversion_H20
+- metric_key: 05__of_operations_on_high_carbon_ecosystems
+  feature_column: f_05__of_operations_on_high_carbon_ecosystems
+  sheet_info:
+    sheet_name: 5 Ecological Score
+    sheet_number: '05'
+    thematic_focus: Wider environmental externalities (land, water, biodiversity)
+  basic_info:
+    title: '% of operations on high-carbon ecosystems'
+    slug: '%_of_operations_on_high_carbon_ecosystems'
+    weighting_in_metric: 0.0
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    readiness_status: Draft
+  weight_columns:
+    H5: w_05__of_operations_on_high_carbon_ecosystems_H5
+    H10: w_05__of_operations_on_high_carbon_ecosystems_H10
+    H20: w_05__of_operations_on_high_carbon_ecosystems_H20
+- metric_key: 05_land_degredation_soil_erosion
+  feature_column: f_05_land_degredation_soil_erosion
+  sheet_info:
+    sheet_name: 5 Ecological Score
+    sheet_number: '05'
+    thematic_focus: Wider environmental externalities (land, water, biodiversity)
+  basic_info:
+    title: 'Land Degredation: Soil Erosion'
+    slug: land_degredation:_soil_erosion
+    details: Based on slope, vegetation loss, industrial activity
+    weighting_in_metric: 0.0
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    readiness_status: Draft
+  weight_columns:
+    H5: w_05_land_degredation_soil_erosion_H5
+    H10: w_05_land_degredation_soil_erosion_H10
+    H20: w_05_land_degredation_soil_erosion_H20
+- metric_key: 05_land_resoration_ratio
+  feature_column: f_05_land_resoration_ratio
+  sheet_info:
+    sheet_name: 5 Ecological Score
+    sheet_number: '05'
+    thematic_focus: Wider environmental externalities (land, water, biodiversity)
+  basic_info:
+    title: Land Resoration Ratio
+    slug: land_resoration_ratio
+    weighting_in_metric: 0.0
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    readiness_status: Draft
+  weight_columns:
+    H5: w_05_land_resoration_ratio_H5
+    H10: w_05_land_resoration_ratio_H10
+    H20: w_05_land_resoration_ratio_H20
+- metric_key: 05__of_sealed_land
+  feature_column: f_05__of_sealed_land
+  sheet_info:
+    sheet_name: 5 Ecological Score
+    sheet_number: '05'
+    thematic_focus: Wider environmental externalities (land, water, biodiversity)
+  basic_info:
+    title: '% of Sealed land'
+    slug: '%_of_sealed_land'
+    details: converts from nature to permanent infrastructure
+    weighting_in_metric: 0.0
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    readiness_status: Draft
+  weight_columns:
+    H5: w_05__of_sealed_land_H5
+    H10: w_05__of_sealed_land_H10
+    H20: w_05__of_sealed_land_H20
+- metric_key: 05_plastic_micro_pollutants_in_soil
+  feature_column: f_05_plastic_micro_pollutants_in_soil
+  sheet_info:
+    sheet_name: 5 Ecological Score
+    sheet_number: '05'
+    thematic_focus: Wider environmental externalities (land, water, biodiversity)
+  basic_info:
+    title: Plastic micro-pollutants in soil
+    slug: plastic_micro_pollutants_in_soil
+    weighting_in_metric: 0.0
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    readiness_status: Draft
+  weight_columns:
+    H5: w_05_plastic_micro_pollutants_in_soil_H5
+    H10: w_05_plastic_micro_pollutants_in_soil_H10
+    H20: w_05_plastic_micro_pollutants_in_soil_H20
+- metric_key: 05_habitat_destruction
+  feature_column: f_05_habitat_destruction
+  sheet_info:
+    sheet_name: 5 Ecological Score
+    sheet_number: '05'
+    thematic_focus: Wider environmental externalities (land, water, biodiversity)
+  basic_info:
+    title: Habitat Destruction
+    slug: habitat_destruction
+    weighting_in_metric: 0.0
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    readiness_status: Draft
+  weight_columns:
+    H5: w_05_habitat_destruction_H5
+    H10: w_05_habitat_destruction_H10
+    H20: w_05_habitat_destruction_H20
+- metric_key: 05_biodiversity_loss_species_per_industry_or_region
+  feature_column: f_05_biodiversity_loss_species_per_industry_or_region
+  sheet_info:
+    sheet_name: 5 Ecological Score
+    sheet_number: '05'
+    thematic_focus: Wider environmental externalities (land, water, biodiversity)
+  basic_info:
+    title: Biodiversity loss (species per industry or region)
+    slug: biodiversity_loss_(species_per_industry_or_region)
+    weighting_in_metric: 0.0
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    readiness_status: Draft
+  weight_columns:
+    H5: w_05_biodiversity_loss_species_per_industry_or_region_H5
+    H10: w_05_biodiversity_loss_species_per_industry_or_region_H10
+    H20: w_05_biodiversity_loss_species_per_industry_or_region_H20
+- metric_key: 05_ecosystem_integrity_index
+  feature_column: f_05_ecosystem_integrity_index
+  sheet_info:
+    sheet_name: 5 Ecological Score
+    sheet_number: '05'
+    thematic_focus: Wider environmental externalities (land, water, biodiversity)
+  basic_info:
+    title: Ecosystem integrity index
+    slug: ecosystem_integrity_index
+    weighting_in_metric: 0.0
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    readiness_status: Draft
+  weight_columns:
+    H5: w_05_ecosystem_integrity_index_H5
+    H10: w_05_ecosystem_integrity_index_H10
+    H20: w_05_ecosystem_integrity_index_H20
+- metric_key: 05_carbon_sink_destruction_rate
+  feature_column: f_05_carbon_sink_destruction_rate
+  sheet_info:
+    sheet_name: 5 Ecological Score
+    sheet_number: '05'
+    thematic_focus: Wider environmental externalities (land, water, biodiversity)
+  basic_info:
+    title: Carbon sink destruction rate
+    slug: carbon_sink_destruction_rate
+    weighting_in_metric: 0.0
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    readiness_status: Draft
+  weight_columns:
+    H5: w_05_carbon_sink_destruction_rate_H5
+    H10: w_05_carbon_sink_destruction_rate_H10
+    H20: w_05_carbon_sink_destruction_rate_H20
+- metric_key: 05_legal_vs_illegal_land_conversion_rates_amazon_deforestation_for_beef_vs_palm_oil_plantations
+  feature_column: f_05_legal_vs_illegal_land_conversion_rates_amazon_deforestation_for_beef_vs_palm_oil_plantations
+  sheet_info:
+    sheet_name: 5 Ecological Score
+    sheet_number: '05'
+    thematic_focus: Wider environmental externalities (land, water, biodiversity)
+  basic_info:
+    title: Legal vs. illegal land conversion rates (Amazon deforestation for beef
+      vs. palm oil plantations)
+    slug: legal_vs._illegal_land_conversion_rates_(amazon_deforestation_for_beef_vs._palm_oil_plantations)
+    weighting_in_metric: 0.0
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    readiness_status: Draft
+  weight_columns:
+    H5: w_05_legal_vs_illegal_land_conversion_rates_amazon_deforestation_for_beef_vs_palm_oil_plantations_H5
+    H10: w_05_legal_vs_illegal_land_conversion_rates_amazon_deforestation_for_beef_vs_palm_oil_plantations_H10
+    H20: w_05_legal_vs_illegal_land_conversion_rates_amazon_deforestation_for_beef_vs_palm_oil_plantations_H20
+- metric_key: 05_ocean_acidification
+  feature_column: f_05_ocean_acidification
+  sheet_info:
+    sheet_name: 5 Ecological Score
+    sheet_number: '05'
+    thematic_focus: Wider environmental externalities (land, water, biodiversity)
+  basic_info:
+    title: Ocean acidification
+    slug: ocean_acidification
+    details: "Region\tSensitivity\tIndex (0–1)\nCoral-rich tropics (e.g., SE Asia)\t\
+      Very high\t1.0\nTemperate coasts (e.g., Europe, U.S.)\tHigh\t0.8\nCold waters\
+      \ (e.g., Arctic, South Ocean)\tMedium\t0.6\nInland/landlocked areas\tLow\t0.2"
+    data_fields_required: 'IPCC AR6 and NOAA estimate 26–30% of emitted CO₂ is absorbed
+      by oceans.
+
+
+      You can apply a fixed uptake coefficient of 0.28 to coal CO₂ to estimate its
+      ocean acid load.'
+    formula: '  = CO2_emissions_coal * 0.28 * Regional_Impact_Index'
+    weighting_in_metric: 0.0
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    readiness_status: Draft
+  weight_columns:
+    H5: w_05_ocean_acidification_H5
+    H10: w_05_ocean_acidification_H10
+    H20: w_05_ocean_acidification_H20
+- metric_key: 05_water_pollution
+  feature_column: f_05_water_pollution
+  sheet_info:
+    sheet_name: 5 Ecological Score
+    sheet_number: '05'
+    thematic_focus: Wider environmental externalities (land, water, biodiversity)
+  basic_info:
+    title: Water pollution
+    slug: water_pollution
+    weighting_in_metric: 0.0
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    readiness_status: Draft
+  weight_columns:
+    H5: w_05_water_pollution_H5
+    H10: w_05_water_pollution_H10
+    H20: w_05_water_pollution_H20
+- metric_key: 05__of_effluent_treated
+  feature_column: f_05__of_effluent_treated
+  sheet_info:
+    sheet_name: 5 Ecological Score
+    sheet_number: '05'
+    thematic_focus: Wider environmental externalities (land, water, biodiversity)
+  basic_info:
+    title: '% of effluent treated'
+    slug: '%_of_effluent_treated'
+    details: Proportion of wastewater treated before discharge
+    weighting_in_metric: 0.0
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    readiness_status: Draft
+  weight_columns:
+    H5: w_05__of_effluent_treated_H5
+    H10: w_05__of_effluent_treated_H10
+    H20: w_05__of_effluent_treated_H20
+- metric_key: 05_water_stress
+  feature_column: f_05_water_stress
+  sheet_info:
+    sheet_name: 5 Ecological Score
+    sheet_number: '05'
+    thematic_focus: Wider environmental externalities (land, water, biodiversity)
+  basic_info:
+    title: Water Stress
+    slug: water_stress
+    weighting_in_metric: 0.0
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    readiness_status: Draft
+  weight_columns:
+    H5: w_05_water_stress_H5
+    H10: w_05_water_stress_H10
+    H20: w_05_water_stress_H20
+- metric_key: 05_groundwater_depletion_rate_nasa_satellite_data_water_table_reduction_trends
+  feature_column: f_05_groundwater_depletion_rate_nasa_satellite_data_water_table_reduction_trends
+  sheet_info:
+    sheet_name: 5 Ecological Score
+    sheet_number: '05'
+    thematic_focus: Wider environmental externalities (land, water, biodiversity)
+  basic_info:
+    title: Groundwater depletion rate (NASA satellite data, water table reduction
+      trends)
+    slug: groundwater_depletion_rate_(nasa_satellite_data,_water_table_reduction_trends)
+    weighting_in_metric: 0.0
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    readiness_status: Draft
+  weight_columns:
+    H5: w_05_groundwater_depletion_rate_nasa_satellite_data_water_table_reduction_trends_H5
+    H10: w_05_groundwater_depletion_rate_nasa_satellite_data_water_table_reduction_trends_H10
+    H20: w_05_groundwater_depletion_rate_nasa_satellite_data_water_table_reduction_trends_H20
+- metric_key: 05_air_pollution
+  feature_column: f_05_air_pollution
+  sheet_info:
+    sheet_name: 5 Ecological Score
+    sheet_number: '05'
+    thematic_focus: Wider environmental externalities (land, water, biodiversity)
+  basic_info:
+    title: Air Pollution
+    slug: air_pollution
+    weighting_in_metric: 0.0
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    readiness_status: Draft
+  weight_columns:
+    H5: w_05_air_pollution_H5
+    H10: w_05_air_pollution_H10
+    H20: w_05_air_pollution_H20
+- metric_key: 08_composite_score_or_the_st_fvi_core_metric
+  feature_column: f_08_composite_score_or_the_st_fvi_core_metric
+  sheet_info:
+    sheet_name: 8 Workforce Transition Score
+    sheet_number: 08
+    thematic_focus: Reskilling cost & labour-market rigidity
+  basic_info:
+    title: Composite Score or the 1st FVI Core Metric
+    slug: composite_score_or_the_1st_fvi_core_metric
+    details: Outputs of formulas in Column G and Weighting in Column H
+    data_fields_required: TBA Combination of metrics below
+    weighting_in_metric: 0.0
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    readiness_status: Draft
+  weight_columns:
+    H5: w_08_composite_score_or_the_st_fvi_core_metric_H5
+    H10: w_08_composite_score_or_the_st_fvi_core_metric_H10
+    H20: w_08_composite_score_or_the_st_fvi_core_metric_H20
+- metric_key: 08_retraining_program_availability_score
+  feature_column: f_08_retraining_program_availability_score
+  sheet_info:
+    sheet_name: 8 Workforce Transition Score
+    sheet_number: 08
+    thematic_focus: Reskilling cost & labour-market rigidity
+  basic_info:
+    title: Retraining program availability score
+    slug: retraining_program_availability_score
+    details: Average Training Time for Reskilling (Months)
+    weighting_in_metric: 0.0
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    readiness_status: Draft
+  weight_columns:
+    H5: w_08_retraining_program_availability_score_H5
+    H10: w_08_retraining_program_availability_score_H10
+    H20: w_08_retraining_program_availability_score_H20
+- metric_key: 08_number_of_viable_sister_industries
+  feature_column: f_08_number_of_viable_sister_industries
+  sheet_info:
+    sheet_name: 8 Workforce Transition Score
+    sheet_number: 08
+    thematic_focus: Reskilling cost & labour-market rigidity
+  basic_info:
+    title: Number of Viable Sister Industries
+    slug: number_of_viable_sister_industries
+    weighting_in_metric: 0.0
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    readiness_status: Draft
+  weight_columns:
+    H5: w_08_number_of_viable_sister_industries_H5
+    H10: w_08_number_of_viable_sister_industries_H10
+    H20: w_08_number_of_viable_sister_industries_H20
+- metric_key: 08_employment_absorption_capacity_of_sister_industries
+  feature_column: f_08_employment_absorption_capacity_of_sister_industries
+  sheet_info:
+    sheet_name: 8 Workforce Transition Score
+    sheet_number: 08
+    thematic_focus: Reskilling cost & labour-market rigidity
+  basic_info:
+    title: Employment Absorption Capacity of Sister Industries
+    slug: employment_absorption_capacity_of_sister_industries
+    weighting_in_metric: 0.0
+  data_quality:
+    structured_availability: 0
+    unstructured_availability: 0
+    country_level_availability: 0
+    sub_industry_availability: 0
+    volume_of_data: 0
+    alternative_proxy_feasibility: 0
+    genai_ml_fillability: 0
+    industry_level_variability: 0
+    longitudinal_availability: 0
+    data_verification_bias_risk: 0
+    interdependence_with_other_metrics: 0
+  assessment:
+    readiness_status: Draft
+  weight_columns:
+    H5: w_08_employment_absorption_capacity_of_sister_industries_H5
+    H10: w_08_employment_absorption_capacity_of_sister_industries_H10
+    H20: w_08_employment_absorption_capacity_of_sister_industries_H20
+sheet_mappings:
+  1 Necessity Score (Core): '01'
+  2 Resource Extraction & Scarcity Score: '02'
+  3 Artificial Support Score: '03'
+  4 Emissions Score: '04'
+  5 Ecological Score: '05'
+  8 Workforce Transition Score: 08
+  9 Infrastructure Repurposing Score: 09
+  11 Monopoly & Corporate Control Score: '11'
+  20 Economic Score: '20'
+  24. Technological Disruption Score: '24'
+summary:
+  total_data_sources: 92
+  total_metrics: 46
+  sheets_processed: 10
+  metrics_by_sheet:
+    1 Necessity Score (Core): 6
+    4 Emissions Score: 7
+    20 Economic Score: 8
+    5 Ecological Score: 21
+    8 Workforce Transition Score: 4
